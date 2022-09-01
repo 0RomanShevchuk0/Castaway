@@ -129,7 +129,7 @@ $almostBlack: #191919;
 @media (max-width: 767.98px){
 	.navbar {
 		&__body{
-			height: 60px;
+			height: 40px;
 			padding: 20px 20px;
 		}
 		&__logo{
@@ -209,6 +209,7 @@ $almostBlack: #191919;
 }
 @media (max-width: 479.98px){
 	.navbar__body{
+		height: 20px;
 		padding: 20px;
 	}
 }
@@ -896,5 +897,106 @@ $almostBlack: #191919;
 			border: none;
 		}
 		&__button{width: 100%;}
+	}
+}
+
+//* ================ Reviews =====================
+.reviews {
+	margin-top: 200px;
+
+	&__cells {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+	&__cell {
+		background: #000;
+		padding: 50px;
+		border-radius: 32px;
+		margin: 8px;
+	}
+}
+.cell {
+	&__text {
+		padding-top: 20px;
+		font-size: 36px;
+		line-height: 43px;
+		color: #fff;
+	}
+	&__author {
+		padding-top: 20px;
+		font-size: 24px;
+		line-height: 29px;
+		color: rgba(255, 255, 255, 0.7);
+	}
+}
+
+.rating {
+	display: flex;
+	justify-content: space-between;
+	font-size: 30px;
+	line-height: 0.75;
+
+	&__body {
+		position: relative;
+	}
+	&__body::before {
+		content: '★★★★★';
+		display: block;
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	&__active {
+		position: absolute;
+		width: 0%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
+	&__active::before{
+		content: '★★★★★';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		color: #FCFF51;
+	}
+
+	&__items {
+		display: flex;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&__item{
+		flex: 0 0 20%;
+		height: 100%;
+		opacity: 0;
+		margin: 0;
+	}
+	&__value{
+		font-size: 60%;
+		line-height: 1;
+	}
+}
+
+@media(max-width: 991.98px){
+	.reviews__cells{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media(max-width: 767.98px){
+	.reviews{margin-top: 100px;}
+}
+@media(max-width: 700px){
+	.reviews__cells{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.reviews__cell{
+		margin: 8px 0;
+		padding: 40px;
 	}
 }
