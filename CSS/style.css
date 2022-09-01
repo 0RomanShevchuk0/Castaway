@@ -816,4 +816,9 @@ body.locked {
     width: 40%;
     font-size: 22px;
   }
+}
+@media (max-width: 480px) {
+  .subscribe__button {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
