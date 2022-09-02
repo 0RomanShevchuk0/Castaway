@@ -5,8 +5,11 @@ document.querySelector('#navbar__burger').addEventListener('click', function() {
 	document.querySelector('body').classList.toggle('locked');
 })
 
-document.querySelector('#navbar__logo').addEventListener('click', () => location.reload())
-
+//* Логотип обновление страницы
+let logos = document.querySelectorAll('#logo');
+logos.forEach(logo =>{
+	logo.addEventListener('click', () => location.reload());
+} )
 
 //*Рейтинги
 const ratings = document.querySelectorAll('.rating');
@@ -36,3 +39,38 @@ function initRatings() {
 		ratingActive.style.width = `${ratingActiveWidth}%`;
 	}
 }
+
+//*Плавная прокрутка к якорю
+document.querySelectorAll('a.anchor').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+
+        const href = this.getAttribute('href').substring(1);
+
+        const scrollTarget = document.getElementById(href);
+
+        const topOffset = 150;
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        })
+    })
+})
+
+//* Навигация прокрутка
+window.addEventListener('scroll', () => {
+	if(window.innerWidth > 768){	
+		if(scrollY > 50){
+			document.querySelector('.navbar').style.opacity = 0.9;
+		}
+		else{
+			document.querySelector('.navbar').style.opacity = 1;
+		}
+	}
+	else{
+		document.querySelector('.navbar').style.opacity = 1;
+	}
+})

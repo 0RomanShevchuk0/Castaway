@@ -17,16 +17,16 @@
 		<!--? ==================== Navigation ============================ -->
 		<header class="navbar">
 			<nav class="navbar__body">
-				<div class="navbar__logo" id="navbar__logo">Castaway</div>
+				<div class="navbar__logo" id="logo">Castaway</div>
 				<div class="navbar__burger" id="navbar__burger">
 					<span class="navbar__burger-span"></span>
 				</div>
 				<div class="navbar__menu" id="navbar__menu">
 					<ul class="navbar__list">
-						<li><a class="navbar__link" href="#">Home</a></li>
-						<li><a class="navbar__link" href="#">Episodes</a></li>
-						<li><a class="navbar__link" href="#">About</a></li>
-						<li><a class="navbar__link" href="#">Contact</a></li>
+						<li><a class="navbar__link anchor" href="#Home">Home</a></li>
+						<li><a class="navbar__link anchor" href="#Episodes">Episodes</a></li>
+						<li><a class="navbar__link anchor" href="#About">About</a></li>
+						<li><a class="navbar__link anchor" href="#Contact">Contact</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -34,7 +34,7 @@
 
 		<main class="page">
 			<!--? ==================== Page header ============================ -->
-			<section class="page-header">
+			<section class="page-header" id="Home">
 				<div class="page-header__container">
 					<div class="page-header__body">
 						<div class="page-header__photo">
@@ -62,7 +62,7 @@
 			</section>
 
 			<!--? ==================== Latest episodes ============================ -->
-			<section class="latest-episodes">
+			<section class="latest-episodes" id="Episodes">
 				<div class="latest-episodes__container">
 					<div class="latest-episodes__titel title">
 						<h1 class="title__text">Latest episodes</h1>
@@ -121,7 +121,7 @@
 			</section>
 
 			<!--? ==================== Latest episodes ============================ -->
-			<section class="about">
+			<section class="about" id="About">
 				<div class="about__container">
 					<div class="about__body">
 						<div class="about__content">
@@ -294,8 +294,43 @@
 			</section>
 		</main>
 		
-		<footer class="footer">
-			
+		<footer class="footer" id="Contact">
+				<div class="footer__body">
+					<div class="footer__media">
+						<div class="footer__logo"  id="logo">Castaway</div>
+						<div class="footer__socials">
+							<a href="#"><img src="../PICS/socials/instagram.png" alt="Instagram"></a>
+							<a href="#"><img src="../PICS/socials/twitter.png" alt="Twiter"></a>
+							<a href="#"><img src="../PICS/socials/facebook.png" alt="Facebook"></a>
+						</div>
+					</div>
+					<div class="footer__text">
+						<div class="footer__navigation-links">
+							<ul class="footer__navigtion-list">
+								<li><a href="#Home" class="footer__navigation-link anchor">Home</a></li>
+								<li><a href="#About" class="footer__navigation-link anchor">About</a></li>
+								<li><a href="#Episodes" class="footer__navigation-link anchor">Episodes</a></li>
+								<li><a href="#Contact" class="footer__navigation-link anchor">Contact</a></li>
+							</ul>
+						</div>
+						<div class="footer__links-about"></div>
+						<ul class="footer__info-list">
+							<li><a href="#" class="footer__info-link">Style Guide</a></li>
+							<li><a href="#" class="footer__info-link">Instructions</a></li>
+							<li><a href="#" class="footer__info-link">Changelog</a></li>
+							<li><a href="#" class="footer__info-link">Credit</a></li>
+							<li><a href="#" class="footer__info-link">Powered by Webflow</a></li>
+							<li><a href="#" class="footer__info-link">Licenses</a></li>
+						</ul>
+					</div>
+					<div class="footer__icons">
+						<a href="#"><img class="footer__icon" src="../PICS/page_header/spotify.png" alt="spotify"></a>
+						<a href="#"><img class="footer__icon" src="../PICS/page_header/iheartradio.png" alt="iheartradio"></a>
+						<a href="#"><img class="footer__icon" src="../PICS/page_header/soundcloud.png" alt="soundcloud"></a>
+						<a href="#"><img class="footer__icon" src="../PICS/page_header/deezer.png" alt="deezer"></a>
+						<a href="#"><img class="footer__icon" src="../PICS/page_header/applemusic.png" alt="applemusic"></a>
+					</div>
+				</div>
 		</footer>
 
 	</div>
