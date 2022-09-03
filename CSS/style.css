@@ -247,12 +247,39 @@ body img {
 .page-header__text {
   font-size: 70px;
 }
+.page-header__h1 {
+  transform: translate(300%, 0);
+  opacity: 0;
+  transition: 0.6s;
+}
+.page-header__h1._active {
+  transform: translate(0, 0);
+  opacity: 1;
+}
 .page-header__span1 {
+  display: inline-block;
   font-size: 75px;
+  transform: translate(400%, 0);
+  opacity: 0;
+  transition: 0.6s;
+  transition-delay: 0.4s;
+}
+.page-header__span1._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .page-header__span2 {
+  display: inline-block;
   font-size: 80px;
   font-weight: 700;
+  transform: translate(400%, 0);
+  opacity: 0;
+  transition: 0.6s;
+  transition-delay: 0.8s;
+}
+.page-header__span2._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .page-header__listen {
   padding: 22% 0 0 20px;
@@ -267,12 +294,33 @@ body img {
   margin-top: 16px;
   margin-right: 18px;
   transition: 0.6s;
+  opacity: 0;
+  transform: translate(600px, 0);
 }
 .page-header__icons a:hover {
   transform: scale(1.1);
 }
 .page-header__icon {
   max-width: 100%;
+}
+.page-header__icons a:nth-child(1) {
+  transition-delay: 0s;
+}
+.page-header__icons a:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.page-header__icons a:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.page-header__icons a:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.page-header__icons a:nth-child(5) {
+  transition-delay: 0.8s;
+}
+.page-header__icons a._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 @media (max-width: 1299.98px) {
@@ -380,11 +428,27 @@ body img {
   font-size: 64px;
   line-height: 79.2px;
   letter-spacing: 2.88 px;
+  transition: 0.6s;
+  opacity: 0;
+  transform: translate(-200%, 0);
+  transition-delay: 0.3s;
+}
+.latest-episodes__titel .title__text._active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .latest-episodes__titel .title__button {
   width: 178px;
   height: 51px;
   font-size: 17px;
+  transition: 0.6s;
+  opacity: 0;
+  transform: translate(200%, 0);
+  transition-delay: 0.3s;
+}
+.latest-episodes__titel .title__button._active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .latest-episodes__item {
   margin-top: 60px;
@@ -395,6 +459,13 @@ body img {
 
 .item {
   padding: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.6s;
+}
+.item._active {
+  opacity: 1;
+  transform: translateY(0px);
 }
 .item__body {
   display: flex;
@@ -592,7 +663,7 @@ body img {
   }
 }
 .about {
-  padding-top: 260px;
+  margin-top: 260px;
 }
 .about__body {
   display: flex;
@@ -606,13 +677,33 @@ body img {
 .about__title {
   font-size: clamp(2.5rem, 1.99rem + 2.55vw, 4.063rem);
   line-height: 79px;
+  transition: 0.6s 0.3s;
+  opacity: 0;
+  transform: translateX(-200%);
 }
-.about__text p {
-  padding-top: 20px;
+.about__title._active {
+  opacity: 1;
+  transform: translateX(0);
 }
 .about__text {
   font-size: 22px;
   line-height: 33px;
+}
+.about__text p {
+  padding-top: 20px;
+  transition: 0.6s;
+  opacity: 0;
+  transform: translateX(-200%);
+}
+.about__text p:nth-child(1) {
+  transition-delay: 0.5s;
+}
+.about__text p:nth-child(2) {
+  transition-delay: 0.8s;
+}
+.about__text p._active {
+  opacity: 1;
+  transform: translateX(0);
 }
 .about__pic {
   max-width: 650px;
@@ -631,6 +722,14 @@ body img {
   background-color: #118DA8;
   cursor: pointer;
   transition: 0.6s;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: left center;
+  transition-delay: 1.5s;
+}
+.circle__body._active {
+  opacity: 1;
+  transform: scale(1);
 }
 .circle__body:hover {
   transform: scale(1.05);
@@ -664,6 +763,14 @@ body img {
   font-size: 18px;
   line-height: 27px;
   color: #118DA8;
+  transition: 0.6s;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition-delay: 2s;
+}
+.circle__label._active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 992px) and (min-width: 768px) {
@@ -704,7 +811,7 @@ body img {
 }
 @media (max-width: 767.98px) {
   .about {
-    padding-top: 150px;
+    margin-top: 150px;
   }
   .about__body {
     flex-direction: column-reverse;
@@ -772,11 +879,25 @@ body img {
   font-size: 18px;
   line-height: 27px;
   color: #118DA8;
+  transition: 0.6s 0.6s;
+  opacity: 0;
+  transform: translate(-200%, 0);
+}
+.subscribe__subtitle._active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .subscribe__title {
   font-size: clamp(3.75rem, -970.5rem + 1200vw, 4.5rem);
   line-height: 79px;
   letter-spacing: 2.88px;
+  transition: 0.6s 0.3s;
+  opacity: 0;
+  transform: translate(-200%, 0);
+}
+.subscribe__title._active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .subscribe__form {
   width: 50%;
@@ -794,6 +915,19 @@ body img {
   line-height: 29px;
   box-sizing: border-box;
   border: none;
+  transition: 0.6s;
+  opacity: 0;
+  transform: translateX(100%);
+}
+.subscribe__name {
+  transition-delay: 0.3s;
+}
+.subscribe__email {
+  transition-delay: 0.6s;
+}
+.subscribe__name._active, .subscribe__email._active {
+  opacity: 1;
+  transform: translateX(0);
 }
 .subscribe__name::-moz-placeholder, .subscribe__email::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
@@ -808,6 +942,13 @@ body img {
   width: 90px;
   height: 50px;
   font-size: 15px;
+  transition: 0.6s 0.9s;
+  opacity: 0;
+  transform: translateX(200%);
+}
+.subscribe__button._active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 992px) {
@@ -860,6 +1001,36 @@ body img {
   padding: 50px;
   border-radius: 32px;
   margin: 8px;
+  transition: 0.6s;
+  opacity: 0;
+}
+.reviews__cell:nth-child(1) {
+  transform: translateX(-100%);
+  transition-delay: 0.6s;
+}
+.reviews__cell:nth-child(2) {
+  transform: translateX(-100%);
+  transition-delay: 0.3s;
+}
+.reviews__cell:nth-child(3) {
+  transform: translateX(-100%);
+  transition-delay: 0s;
+}
+.reviews__cell:nth-child(4) {
+  transform: translateX(100%);
+  transition-delay: 0s;
+}
+.reviews__cell:nth-child(5) {
+  transform: translateX(100%);
+  transition-delay: 0.3s;
+}
+.reviews__cell:nth-child(6) {
+  transform: translateX(100%);
+  transition-delay: 0.6s;
+}
+.reviews__cell._active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .cell__text {

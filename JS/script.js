@@ -5,6 +5,18 @@ document.querySelector('#navbar__burger').addEventListener('click', function() {
 	document.querySelector('body').classList.toggle('locked');
 })
 
+//* Убирать active при переходе по ссылке меню
+let navLinks = document.querySelectorAll('#navbar__link');
+	navLinks.forEach(navLink => {
+		navLink.addEventListener('click', () => {
+			if(window.innerWidth < 768){
+				document.querySelector('#navbar__burger').classList.toggle('active');
+				document.querySelector('#navbar__menu').classList.toggle('active');
+				document.querySelector('body').classList.toggle('locked');	
+			}
+		})
+	})
+
 //* Логотип обновление страницы
 let logos = document.querySelectorAll('#logo');
 logos.forEach(logo =>{
@@ -74,3 +86,36 @@ window.addEventListener('scroll', () => {
 		document.querySelector('.navbar').style.opacity = 1;
 	}
 })
+
+//*Анимация при скроле
+let animItems = document.querySelectorAll('._animItems');
+
+if(animItems.length > 0){
+
+	window.addEventListener('scroll', animOnScroll);
+
+	function animOnScroll(){
+		animItems.forEach(animItem => {
+			const animItemOffset = offset(animItem);
+			const animItemHeight = animItem.offsetHeight;
+			const animStart = 4;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+			if((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)){
+				animItem.classList.add('_active')
+			}
+			else{
+				if(!animItem.classList.contains('no-remove')){
+					animItem.classList.remove('_active')
+				}
+			}
+		})
+	}
+	animOnScroll();
+	
+	function offset(el){
+		const rect = el.getBoundingClientRect();
+		return rect.top + window.scrollY;
+	}
+}

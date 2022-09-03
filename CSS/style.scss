@@ -251,15 +251,43 @@ $almostBlack: #191919;
 
 	&__text {
 		font-size: 70px;
+		
 	}
-
+	
+	&__h1{
+		transform: translate(300%, 0);
+		opacity: 0;
+		transition: 0.6s;
+	}
+	&__h1._active{
+		transform: translate(0, 0);
+		opacity: 1;
+	}
 	&__span1 {
+		display: inline-block;
 		font-size: 75px;
+		transform: translate(400%, 0);
+		opacity: 0;
+		transition: 0.6s;
+		transition-delay: 0.4s;
+	}
+	&__span1._active {
+		transform: translate(0, 0);
+		opacity: 1;
 	}
 
 	&__span2 {
+		display: inline-block;
 		font-size: 80px;
 		font-weight: 700;
+		transform: translate(400%, 0);
+		opacity: 0;
+		transition: 0.6s;
+		transition-delay: 0.8s;
+	}
+	&__span2._active{
+		transform: translate(0, 0);
+		opacity: 1;
 	}
 
 	&__listen {
@@ -276,12 +304,33 @@ $almostBlack: #191919;
 		margin-top: 16px;
 		margin-right: 18px;
 		transition: 0.6s;
+		opacity: 0;
+		transform: translate(600px,0);
 	}
 	&__icons a:hover{
 		transform: scale(1.1);
 	}
 	&__icon{
 		max-width: 100%;
+	}
+	&__icons a:nth-child(1){
+		transition-delay: 0s;
+	}
+	&__icons a:nth-child(2){
+		transition-delay: 0.2s;
+	}
+	&__icons a:nth-child(3){
+		transition-delay: 0.4s;
+	}
+	&__icons a:nth-child(4){
+		transition-delay: 0.6s;
+	}
+	&__icons a:nth-child(5){
+		transition-delay: 0.8s;
+	}
+	&__icons a._active{
+		transform: translate(0,0);
+		opacity: 1;
 	}
 }
 @media (max-width: 1299.98px){
@@ -401,11 +450,27 @@ $almostBlack: #191919;
 			font-size: 64px;
 			line-height: 79.2px;
 			letter-spacing: 2.88 px;
+			transition: 0.6s;
+			opacity: 0;
+			transform: translate(-200%, 0);
+			transition-delay: 0.3s;
+		}
+		.title__text._active{
+			opacity: 1;
+			transform: translate(0, 0);
 		}
 		.title__button{
 			width: 178px;
 			height: 51px;
 			font-size: 17px;
+			transition: 0.6s;
+			opacity: 0;
+			transform: translate(200%, 0);
+			transition-delay: 0.3s;
+		}
+		.title__button._active{
+			opacity: 1;
+			transform: translate(0, 0);
 		}
 	}
 
@@ -418,6 +483,13 @@ $almostBlack: #191919;
 }
 .item {
 	padding: 40px;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: 0.6s;
+	&._active{
+		opacity: 1;
+		transform: translateY(0px);
+	}
 
 	&__body {
 		display: flex;
@@ -637,7 +709,7 @@ $almostBlack: #191919;
 
 //* ================ About =====================
 .about {
-	padding-top: 260px;
+	margin-top: 260px;
 
 	&__body {
 		display: flex;
@@ -651,14 +723,37 @@ $almostBlack: #191919;
 	&__title {
 		font-size: clamp(2.5rem, 1.99rem + 2.55vw, 4.063rem);
 		line-height: 79px;
+		transition: 0.6s 0.3s;
+		opacity: 0;
+		transform: translateX(-200%);
 	}
-	&__text p{
-		padding-top: 20px;
+	&__title._active{
+		opacity: 1;
+		transform: translateX(0);
 	}
+
 	&__text {
 		font-size: 22px;
 		line-height: 33px;
 	}
+
+	&__text p{
+		padding-top: 20px;
+		transition: 0.6s;
+		opacity: 0;
+		transform: translateX(-200%);
+	}
+	&__text p:nth-child(1){
+		transition-delay: 0.5s;
+	}
+	&__text p:nth-child(2){
+		transition-delay: 0.8s;
+	}
+	&__text p._active{
+		opacity: 1;
+		transform: translateX(0);
+	}
+
 	&__pic {
 		max-width: 650px;
 	}
@@ -678,6 +773,14 @@ $almostBlack: #191919;
 		background-color: $blueGreen;
 		cursor: pointer;
 		transition: 0.6s;
+		opacity: 0;
+		transform: scale(0);
+		transform-origin: left center;
+		transition-delay: 1.5s;
+	}
+	&__body._active{
+		opacity: 1;
+		transform: scale(1);
 	}
 	&__body:hover{
 		transform: scale(1.05);
@@ -713,6 +816,14 @@ $almostBlack: #191919;
 		font-size: 18px;
 		line-height: 27px;
 		color: $blueGreen;
+		transition: 0.6s;
+		opacity: 0;
+		transform: translateY(-50px);
+		transition-delay: 2s;
+	}
+	&__label._active{
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
@@ -758,7 +869,7 @@ $almostBlack: #191919;
 }
 @media (max-width: 767.98px){
 	.about{
-		padding-top: 150px;
+		margin-top: 150px;
 
 		&__body {
 			flex-direction: column-reverse;
@@ -830,11 +941,25 @@ $almostBlack: #191919;
 		font-size: 18px;
 		line-height: 27px;
 		color: $blueGreen;
+		transition: 0.6s 0.6s;
+		opacity: 0;
+		transform: translate(-200%,0);
+	}
+	&__subtitle._active{
+		opacity: 1;
+		transform: translate(0,0);
 	}
 	&__title {
 		font-size: clamp(3.75rem, -970.5rem + 1200vw, 4.5rem);
 		line-height: 79px;
 		letter-spacing: 2.88px;
+		transition: 0.6s 0.3s;
+		opacity: 0;
+		transform: translate(-200%,0);
+	}
+	&__title._active{
+		opacity: 1;
+		transform: translate(0,0);
 	}
 	&__form {
 		width: 50%;
@@ -853,6 +978,20 @@ $almostBlack: #191919;
 		line-height: 29px;
 		box-sizing: border-box;
 		border: none;
+		transition: 0.6s;
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	&__name{
+		transition-delay: 0.3s;
+	}
+	&__email{
+		transition-delay: 0.6s;
+	}
+	&__name._active,
+	&__email._active{
+		opacity: 1;
+		transform: translateX(0);
 	}
 	&__name::placeholder,
 	&__email::placeholder{
@@ -862,6 +1001,13 @@ $almostBlack: #191919;
 		width: 90px;
 		height: 50px;
 		font-size: 15px;
+		transition: 0.6s 0.9s;
+		opacity: 0;
+		transform: translateX(200%);
+	}
+	&__button._active{
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 
@@ -919,6 +1065,36 @@ $almostBlack: #191919;
 		padding: 50px;
 		border-radius: 32px;
 		margin: 8px;
+		transition: 0.6s;
+		opacity: 0;
+	}
+	&__cell:nth-child(1){
+		transform: translateX(-100%);
+		transition-delay: 0.6s;
+	}
+	&__cell:nth-child(2){
+		transform: translateX(-100%);
+		transition-delay: 0.3s;
+	}
+	&__cell:nth-child(3){
+		transform: translateX(-100%);
+		transition-delay: 0s;
+	}
+	&__cell:nth-child(4){
+		transform: translateX(100%);
+		transition-delay: 0s;
+	}
+	&__cell:nth-child(5){
+		transform: translateX(100%);
+		transition-delay: 0.3s;
+	}
+	&__cell:nth-child(6){
+		transform: translateX(100%);
+		transition-delay: 0.6s;
+	}
+	&__cell._active{
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 .cell {
@@ -1152,4 +1328,3 @@ $almostBlack: #191919;
 		}
 	}
 }
-
