@@ -307,9 +307,6 @@ $almostBlack: #191919;
 		opacity: 0;
 		transform: translate(600px,0);
 	}
-	&__icons a:hover{
-		transform: scale(1.1);
-	}
 	&__icon{
 		max-width: 100%;
 	}
@@ -331,6 +328,10 @@ $almostBlack: #191919;
 	&__icons a._active{
 		transform: translate(0,0);
 		opacity: 1;
+	}
+	&__icons a:hover{
+		transition: .6s;
+		transform: scale(1.1) translate(0, -5px);
 	}
 }
 @media (max-width: 1299.98px){
